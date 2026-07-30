@@ -1,9 +1,8 @@
  package com.project.Viastastore.Repository;
 
-import java.util.List;
+import java.util.List; 
 import java.util.Optional;
 
-import org.jspecify.annotations.Nullable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.project.Viastastore.Model.Cart;
