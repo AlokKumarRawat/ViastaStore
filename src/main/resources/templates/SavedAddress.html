@@ -1,0 +1,51 @@
+<html th:replace="~{base::layout(~{::main})}">
+	<body>
+		<main class="font-[times] bg-[#9f9f9f] ">
+			<div class="w-full py-5">
+				<div class=" mx-auto my-5  border border-gray-500 w-4/5 rounded-md bg-[#f7f7f7]">
+					<div class=" shadow-md py-5">
+						<div class=" text-center text-xl md:text-2xl p-3">Add New Address</div>
+						<div class="">
+							<form action="/savedAddress" method="post" th:object="${dto}">
+								<div class="flex text-md pt-5 px-2 md:px-5 justify-around items-center">
+									
+									<input type="text" name="customerName" placeholder="Customer Name" class="border p-2 rounded-4xl w-4/10" required>
+									<input type="tel" max=10 name="contactNo" placeholder="Contact no" class="border p-2 rounded-4xl w-5/10" required>
+									</div>
+									<div class="flex text-md pt-5 px-2 md:px-5 justify-around items-center">
+									<input type="number" name="pincode" placeholder="Pincode" class="border p-2 rounded-4xl w-4/10" required>
+									<input type="text" max=10 name="address" placeholder="Address" class="border p-2 rounded-4xl w-5/10" required>
+								</div>
+								<div class="text-center pt-5"><button type="submit" class="hover:bg-black hover:text-white  rounded-4xl p-2 mb-3 border w-2/5 ">Add</button></div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="mx-auto my-10 border-2 border-gray-500 w-4/5 rounded-md">
+					<div class="shadow-md py-5 bg-[#f7f7f7] ">
+						<div class=" text-center text-xl md:text-2xl p-3 border-b-2 border-gray-500 ">Manage Address</div>
+						<div class="mx-auto grid grid-cols-5 border-2 rounded-xl text-gray-500 border-gray-500 m-5 w-8/10" th:each="add:${addresses}">
+						<div class="col-span-1" th:if="${add.active}==true">
+							<div class="p-2 border rounded-[50%] bg-black items-center w-1/10 mx-auto mt-10"></div>
+						</div>
+						<div class="col-span-1" th:if="${add.active}==false" th:onclick=update([[${add.id}]])>
+							<div class="p-2 border rounded-[50%] items-center w-1/10 mx-auto mt-10"></div>
+						</div>
+						<div class="col-span-4"><h4 th:text="${add.customerName}">name</h4>
+							<h4 th:text="${add.contactNo}">Contact no</h4>
+							<h4 th:text="${add.user.name}">Email</h4>
+							<p><span th:text="${add.address}">Address</span> <span th:text="${add.pincode}">pincode</span> </p></div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				function update(id){
+					window.location.href="/savedAddress/update/"+id;
+				}
+			</script>
+			
+		</main>
+	</body>
+</html>

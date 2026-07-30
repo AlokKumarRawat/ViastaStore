@@ -1,0 +1,223 @@
+<html th:replace="~{base::layout(~{::main})}">
+<body>
+
+<main class="max-w-6xl mx-auto p-5">
+
+    <h2 class="text-3xl font-bold mb-6">
+        Order Details
+    </h2>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+
+        <!-- Product Details -->
+        <div class="lg:col-span-2 bg-white rounded-lg shadow p-6">
+
+            <div class="flex flex-col md:flex-row gap-6">
+           
+
+                <img th:src="@{'/ProductImages/' + ${order.product.productImages.get(0)}}"
+                     alt="Product"
+                     class="h-100  object-cover rounded-lg border ">
+
+                <div class="">
+
+                    <h2 class="text-2xl font-bold"
+                        th:text="${order.productName}">
+                    </h2>
+
+                    <p class="text-gray-600 mt-2"
+                       th:text="${order.description}">
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-3 mt-5">
+
+                        <p>
+                            <span class="font-semibold">Color :</span>
+                            <span th:text="${order.color}"></span>
+                        </p>
+
+                        <p>
+                            <span class="font-semibold">Size :</span>
+                            <span th:text="${order.size}"></span>
+                        </p>
+
+                        <p>
+                            <span class="font-semibold">Quantity :</span>
+                            <span th:text="${order.quantity}"></span>
+                        </p>
+
+                        <p>
+                            <span class="font-semibold">Order ID :</span>
+                            <span th:text="${order.orderId}"></span>
+                        </p>
+
+                        <p>
+                            <span class="font-semibold">Ordered :</span>
+                            <span th:text="${#temporals.format(order.orderAt,'dd MMM yyyy hh:mm a')}"></span>
+                        </p>
+
+                    </div>
+
+                    <div class="mt-6">
+
+                        <h3 class="font-semibold text-lg mb-2">
+                            Price Details
+                        </h3>
+
+                        <div class="space-y-2">
+
+                            <div class="flex justify-between">
+                                <span>MRP</span>
+                                <span>₹<span th:text="${order.productPrice}"></span></span>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <span>Discount</span>
+                                <span>- ₹<span th:text="${order.discount}"></span></span>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <span>Final Price</span>
+                                <span>₹<span th:text="${order.finalPrice}"></span></span>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <span>Shipping</span>
+                                <span>₹<span th:text="${order.shippingCharge}"></span></span>
+                            </div>
+
+                            <hr>
+
+                            <div class="flex justify-between text-xl font-bold">
+                                <span>Total</span>
+                                <span>₹<span th:text="${order.totalAmount}"></span></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right Section -->
+        <div class="space-y-6">
+
+            <!-- Order Status -->
+            <div class="bg-white rounded-lg shadow p-5">
+
+                <h3 class="text-xl font-semibold mb-4">
+                    Order Status
+                </h3>
+
+                <span
+                    class="px-4 py-2 rounded-full text-white"
+
+                    th:classappend="
+                    ${order.orderStatus.name()=='Processing'} ? ' bg-yellow-500' :
+                    (${order.orderStatus.name()=='Confirmed'} ? ' bg-blue-500' :
+                    (${order.orderStatus.name()=='Shipped'} ? ' bg-indigo-500' :
+                    (${order.orderStatus.name()=='Out_For_Delivery'} ? ' bg-purple-500' :
+                    (${order.orderStatus.name()=='Delivered'} ? ' bg-green-600' :
+                    ' bg-red-600'))))">
+
+                    <span th:text="${order.orderStatus}"></span>
+
+                </span>
+
+                <hr class="my-5">
+
+                <p class="mb-2">
+                    <b>Payment Status :</b>
+                    <span th:text="${order.paymentStatus}"></span>
+                </p>
+
+                <p th:if="${order.paymentId!=null}">
+                    <b>Payment ID :</b>
+                    <span th:text="${order.paymentId}"></span>
+                </p>
+
+            </div>
+
+            <!-- Shipping Address -->
+            <div class="bg-white rounded-lg shadow p-5">
+
+                <h3 class="text-xl font-semibold mb-4">
+                    Shipping Address
+                </h3>
+
+                <p class="font-semibold"
+                   th:text="${order.customerName}">
+                </p>
+
+                <p th:text="${order.contactNo}"></p>
+
+                <p class="mt-2"
+                   th:text="${order.shippingAddress}">
+                </p>
+
+                <p>
+                    PIN :
+                    <span th:text="${order.pincode}"></span>
+                </p>
+
+            </div>
+
+            <!-- Timeline -->
+            <div class="bg-white rounded-lg shadow p-5">
+
+                <h3 class="text-xl font-semibold mb-4">
+                    Timeline
+                </h3>
+
+                <p>
+                    <b>Ordered :</b><br>
+                    <span th:text="${#temporals.format(order.orderAt,'dd MMM yyyy hh:mm a')}"></span>
+                </p>
+
+                <p class="mt-4"
+                   th:if="${order.deliveredAt!=null}">
+                    <b>Delivered :</b><br>
+                    <span th:text="${#temporals.format(order.deliveredAt,'dd MMM yyyy hh:mm a')}"></span>
+                </p>
+
+                <p class="mt-4 text-red-600"
+                   th:if="${order.cancelledAt!=null}">
+                    <b>Cancelled :</b><br>
+                    <span th:text="${#temporals.format(order.cancelledAt,'dd MMM yyyy hh:mm a')}"></span>
+                </p>
+
+            </div>
+
+            <!-- Cancel Button -->
+            <form th:if="${order.orderStatus.name()=='Processing' || order.orderStatus.name()=='Confirmed'}"
+                  th:action="@{/cancel-order/{id}(id=${order.id})}"
+                  method="post">
+
+                <button onclick="confirmCancel()"
+                    class="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-semibold">
+                    Cancel Order
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+    <script>
+function confirmCancel() {
+
+    if (confirm("Are you sure you want to cancel this order?")) {
+        document.getElementById("cancelForm").submit();
+    }
+
+}
+</script>
+
+</main>
+
+</body>
+</html>

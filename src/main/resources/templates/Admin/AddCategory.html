@@ -1,0 +1,45 @@
+<html th:replace="~{Admin/base::layout(~{::main})}">
+	<body>
+		<main class="font-[times]">
+			<div class="w-full">
+				<div class=" mx-auto my-5 border border-gray-500 w-4/5">
+					<div class=" shadow-md">
+						<div class=" bg-blue-400 text-white text-center text-xl md:text-2xl p-3">Add product category</div>
+						<div class="">
+							<form action="AddCategory" method="post" th:object="${dto}">
+								<div class="flex text-md pt-5 px-2 md:px-5 justify-around items-center">
+									<input type="text" name="categoryName" placeholder="Cateogory Name" class="border p-2 rounded-4xl w-4/10" required>
+									<input type="text" name="categoryIcon" placeholder="Category Icon(font awesome)" class="border p-2 rounded-4xl w-5/10" required>
+								</div>
+								<div class="text-center pt-5"><button type="submit" class="bg-blue-400 rounded-4xl p-2 mb-3 text-white w-2/5 ">Add</button></div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="mx-auto my-5 border border-gray-500 w-4/5">
+					<div class="shadow-md">
+						<div class="bg-blue-400 text-white text-center text-xl md:text-2xl p-3">Manage Product Categories</div>
+						<div class="">
+							<div class="">
+								<table class=" text-center mx-auto my-5">
+									<tr>
+										<th class="border border-gray-500 px-2 p-1 ">Sr. No.</th>
+										<th class="border border-gray-500 px-2 p-1 ">Category Name</th>
+										<th class="border border-gray-500 px-2 p-1 ">Category Icon</th>
+										<th class="border border-gray-500 px-2 p-1 ">Category Visiblity</th>
+									</tr>
+									<tr th:each="category,srno:${categories}">
+										<td class="border border-gray-500 px-2 p-1 " th:text="${srno.count}"></td>
+										<td class="border border-gray-500 px-2 p-1 " th:text="${category.categoryName}"></td>
+										<td class="border border-gray-500 px-2 p-1 " th:utext="${category.categoryIcon}"></td>
+										<td class="border border-gray-500 px-2 p-1 " th:text="${category.isVisible}"></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

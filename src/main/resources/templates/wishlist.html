@@ -1,0 +1,34 @@
+<html th:replace="~{base::layout(~{::main})}">
+	<body>
+		<main class="font-[times]">
+			<div class="bg-[#f7f7f7] px-10 md:px-20 pt-5 lg:py-20 md:py-10 border-y border-gray-500 ">
+				<div class="text-xl md:text-2xl lg:text-5xl">Wishlist</div>
+				<div class="text-md md:text-lg font-[sans] text-[#9f9f9f]">
+					<a href="/">Home </a>/ Wishlist
+				</div>
+			</div>
+			<div class="mx-auto my-10 border-2 border-gray-500 w-4/5 rounded-md">
+					<div class="shadow-md py-5 bg-[#f7f7f7] ">
+						<div class="text-center p-10">
+							<div class="mx-auto w-1/10"><img alt="Image not found" src="images/shopping-bags.png"> </div>
+							<div class="font-bold text-3xl mt-5">Your Wishlist is Empty</div>
+							<div class="text-gray-500 mt-2 text-lg">It seems you haven't added any luxury items to your collection yet.</div>
+							<div class="text-center  text-white bg-black p-3 md:p-5 md:px-10 mt-5 w-2/3 md:w-1/4 mx-auto"><a href="/shop" class="text-md" >Discover our collection</a></div>
+						</div>
+						<div class="mx-auto grid grid-cols-5 border-2 rounded-xl text-gray-500 border-gray-500 m-5 w-8/10" th:each="add:${addresses}">
+						
+						<div class="col-span-1">
+							<img alt="" src="images/1.jpg">
+						</div>
+						<div class="col-span-4"><h4 th:text="${add.customerName}">name</h4>
+							<h4 th:text="${add.contactNo}">Contact no</h4>
+							<h4 th:text="${add.user}">Email</h4>
+							<p><span th:text="${add.address}">Address</span> <span th:text="${add.pincode}">pincode</span> </p></div>
+							
+						</div>
+					</div>
+				</div>
+			
+		</main>
+	</body>
+</html>

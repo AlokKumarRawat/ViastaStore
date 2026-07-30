@@ -1,0 +1,72 @@
+<html th:replace="~{Admin/base::layout(~{::main})}">
+	<body>
+		<main>
+			<div class="font-[times]">
+				<div class="col-sm-8 mx-auto">
+					
+					
+				</div>
+				<div class="mx-auto my-5 border border-gray-500 w-[95%] md:w-[90%] rounded-lg overflow-hidden">
+					<div class="shadow-md">
+						<div class="bg-blue-400 text-white text-center text-xl md:text-2xl p-3">
+							<div>Manage Users</div>
+							<a href="/Admin/ManageUsers" 
+   class="bg-gray-600 hover:bg-gray-700 text-white px-2 py-1 text-xl rounded-lg mx-1 inline-block transition">
+   All
+</a>
+
+<a th:href="@{ManageUsers(status='Verified')}" 
+   class="bg-green-500 hover:bg-green-600 text-white px-2 py-1 text-xl rounded-lg mx-1 inline-block transition">
+   Verified users
+</a>
+
+<a th:href="@{ManageUsers(status='Unverified')}" 
+   class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 text-xl rounded-lg mx-1 inline-block transition">
+   Unverified users
+</a>
+
+<a th:href="@{ManageUsers(status='Disabled')}" 
+   class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 text-xl rounded-lg mx-1 inline-block transition">
+   Disabled users
+</a>
+						</div>
+						<div>
+							<div class="overflow-x-auto">
+								<table class="min-w-max text-center mx-auto my-5">
+									<tr class="text-center">
+										<th class="border border-gray-500 px-3 py-2">Sr. No.</th>
+										<th class="border border-gray-500 px-3 py-2">Name</th>
+										<th class="border border-gray-500 px-3 py-2">Gender</th>
+										<th class="border border-gray-500 px-3 py-2">Contact No</th>
+										<th class="border border-gray-500 px-3 py-2">Email</th>
+										<th class="border border-gray-500 px-3 py-2">Status</th>
+										<th class="border border-gray-500 px-3 py-2">Registered At</th>
+										<th class="border border-gray-500 px-3 py-2">Action</th>
+									</tr>
+									<tr th:each="user,srno :${users}">
+										<td class="border border-gray-500 px-3 py-2" th:text="${srno.count}"></td>
+										<td class="border border-gray-500 px-3 py-2 max-w-[200px] break-words" th:text="${user.name}"></td>
+										<td class="border border-gray-500 px-3 py-2" th:text="${user.gender}"></td>
+										<td class="border border-gray-500 px-3 py-2" th:text="${user.contactNo}"></td>
+										<td class="border border-gray-500 px-3 py-2 max-w-[250px] break-all" th:text="${user.email}"></td>
+										<td class="border border-gray-500 px-3 py-2" th:text="${user.status}"></td>
+										<td class="border border-gray-500 px-3 py-2" th:text="${#temporals.format(user.registerAt,'dd-MM-yyyy, HH:mm')}"></td>
+										<td class="border border-gray-500 px-3 py-2 whitespace-nowrap">
+											<a th:if="${user.status.name()=='Disabled'}" th:href="'UpdateUserStatus/' + ${user.id}" class="border border-gray-500 bg-green-500 p-1 px-2 rounded-2xl text-white mx-2">Unblock</a>
+											<a th:if="${user.status.name()=='Verified'}" th:href="'UpdateUserStatus/' + ${user.id}" class="border border-gray-500 bg-red-500 p-1 px-2 rounded-2xl text-white mx-2">Block</a>
+											<span th:if="${user.status.name()=='Unverified'}" class="text-red-500">Not verified</span>
+										</td>
+										
+									</tr>
+									<tr th:if="${users.size()==0}" class="text-center">
+										<td colspan="8">No data available </td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

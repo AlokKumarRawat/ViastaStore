@@ -1,0 +1,166 @@
+<html th:replace="~{base::layout(~{::main})}">
+	<body>
+		<main class="bg-gray-100 py-8 font-sans">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white rounded-2xl shadow-lg p-6 lg:p-10">
+
+            <!-- Product Image -->
+            <div class="flex justify-center items-center">
+
+                <div
+                    class="bg-gray-100 rounded-2xl p-5 overflow-hidden w-full">
+
+                    <img
+                        th:src="@{'/ProductImages/' + ${product.productImages[0]}}"
+                        alt="Product Image"
+                        class="w-full h-[500px] object-cover rounded-xl hover:scale-105 duration-300">
+
+                </div>
+
+            </div>
+
+            <!-- Product Details -->
+            <div class="flex flex-col justify-center">
+
+                <h1
+                    th:text="${product.productName}"
+                    class="text-4xl font-bold text-gray-900">
+                </h1>
+
+                <p
+                    class="text-lg text-gray-500 mt-2">
+                    Brand :
+                    <span
+                        th:text="${product.brandName}"
+                        class="font-semibold text-black">
+                    </span>
+                </p>
+
+                <p
+                    th:text="${product.productDescription}"
+                    class="text-gray-600 leading-7 mt-6">
+                </p>
+
+                <!-- Price -->
+                <div class="flex items-center gap-4 mt-8">
+
+                    <h3
+                        th:text="'₹'+${product.finalPrice}"
+                        class="text-4xl font-bold text-green-600">
+                    </h3>
+
+                    <h4
+                        th:text="'₹'+${product.sellingPrice}"
+                        class="text-xl line-through text-gray-400">
+                    </h4>
+
+                    <span
+                        th:text="${product.discount + '% OFF'}"
+                        class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    </span>
+
+                </div>
+
+                <!-- Stock -->
+                <div class="mt-6 space-y-2">
+
+                    <p>
+                        <span class="font-semibold">Available Colors :</span>
+                        <span th:text="${product.colors}"></span>
+                    </p>
+
+                    <p>
+                        <span class="font-semibold">Stock :</span>
+                        <span th:text="${product.quantity}"></span>
+                    </p>
+
+                </div>
+
+                <!-- Form -->
+                <form th:action="@{/addToCart}" method="post" class="mt-8">
+
+                    <input
+                        type="hidden"
+                        name="productId"
+                        th:value="${product.id}">
+
+                    <div class="grid grid-cols-2 gap-5">
+
+                        <!-- Size -->
+                        <div>
+
+                            <label
+                                class="font-semibold block mb-2">
+                                Size
+                            </label>
+
+                            <select
+                                name="size"
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-black">
+
+                                <option
+                                    th:each="size : ${#strings.arraySplit(product.sizes,',')}"
+                                    th:value="${size}"
+                                    th:text="${size}">
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- Color -->
+                        <div>
+
+                            <label
+                                class="font-semibold block mb-2">
+                                Color
+                            </label>
+
+                            <select
+                                name="color"
+                                class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-black">
+
+                                <option
+                                    th:each="color : ${#strings.arraySplit(product.colors,',')}"
+                                    th:value="${color}"
+                                    th:text="${color}">
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Button -->
+                    <button
+                        class="w-full mt-8 bg-black text-white py-4 rounded-xl text-lg font-semibold hover:bg-gray-800 transition duration-300 cursor-pointer">
+
+                        🛒 Add to Cart
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        var msg="[[${success}]]";
+
+        if(msg!=""){
+            alert(msg);
+        }
+
+    </script>
+
+</main>		
+	</body>
+</html>

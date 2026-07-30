@@ -1,0 +1,62 @@
+<html th:replace="~{base::layout(~{::main})}">
+	<body>
+		<main class="font-[times]">
+			<div class=" px-10 md:px-20 pt-5  md:py-10 ">
+				<div class="text-xl md:text-2xl lg:text-4xl">FAQ</div>
+				<div class="text-md md:text-lg font-[sans] py-2 text-gray-500">
+					<div class="">
+            			<div class="text-md font-bold my-2 text-home bg-white p-2 grid grid-cols-12" id="a1">
+				              <div class="text-b col-span-1">01</div>
+				              <div class="col-span-10">
+				              	Can I return my order? 
+				              </div>
+				              <div class="col-span-1">&gt;</div>
+				              <div class="text-sm text-gray-600 hidden col-span-12" id="ad1">
+					                Returns are only accepted for damaged or defective products.
+				              </div>
+				          </div>
+				           <div class=" text-md font-bold my-2 text-home bg-white p-2 grid grid-cols-12" id="a2">
+				              <div class="text-b col-span-1">02</div>
+				              <div class="col-span-10">
+				               	What if I receive a damaged item? 
+				               	</div>
+				              <div class="col-span-1">&gt;</div>
+				              <div class="text-sm text-gray-600 hidden col-span-12" id="ad2">
+					                Please email us at ittracity@gmail.com within 48 hours with photos, and we’ll assist you with a replacement.
+				              </div>
+				           </div>
+				           
+				            <div class=" text-md font-bold my-2 text-home bg-white p-2 grid grid-cols-12" id="a3">
+				              <div class="text-b col-span-1">04</div>
+				              <div class="col-span-10">
+				               	 Do you ship outside India? 
+				              </div>
+				              <div class="col-span-1">&gt;</div>
+				              <div class="text-sm text-gray-600 hidden col-span-12" id="ad3">
+					                Currently, we ship only within India. For international queries, contact us via email.
+				              </div>
+				            </div>
+				            <div class=" text-md font-bold my-2 text-home bg-white p-2 grid grid-cols-12" id="a4">
+				              <div class="text-b col-span-1">03</div>
+				              <div class="col-span-10">
+				               	  Is shipping free?
+				              </div>
+				              <div class="col-span-1">&gt;</div>
+				              <div class="text-sm text-gray-600 hidden col-span-12" id="ad4">
+					                Yes, we offer free shipping on all orders.
+				              </div>
+				            </div>
+				            </div> 
+
+          			</div>
+				</div>
+				<script type="text/javascript">
+				for (let i = 1; i <= 4; i++) {
+					  document.getElementById(`a${i}`).addEventListener("click", () => {
+					    document.getElementById(`ad${i}`).classList.toggle("hidden");
+					  });
+					}
+				</script>
+		</main>
+	</body>
+</html>

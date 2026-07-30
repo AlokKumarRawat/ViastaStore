@@ -1,0 +1,111 @@
+<html th:replace="~{base::layout(~{::main})}">
+	<body>
+		<main class="font-[times]">
+			<div class="bg-[#f7f7f7] px-10 md:px-20 pt-5  md:py-10 border-y border-gray-500 ">
+				<div class="text-xl md:text-2xl lg:text-5xl">Shopping Bag</div>
+				<div class="text-md md:text-lg font-[sans] text-[#9f9f9f]">
+					<a href="/">Home </a>/ Shopping Bag 
+				</div>
+			</div>
+			<div class="grid grid-cols-4 px-10 ">
+			<div class="col-span-4 md:col-span-3 mx-auto my-10 w-4/5  ">
+					<div class="shadow-md  bg-[#f7f7f7] ">
+						<div class="text-center p-10" th:if="${#lists.isEmpty(cartItem)}">
+							<div class="mx-auto w-1/10"><img alt="Image not found" src="images/shopping-bags.png" cl> </div>
+							<div class="font-bold text-3xl mt-5">Your Cart is Empty</div>
+							<div class="text-gray-500 mt-2 text-lg">It seems you haven't added any luxury items to your collection yet.</div>
+							<div class="text-center  text-white bg-black p-3 md:p-5 md:px-10 mt-5 w-2/3 md:w-1/4 mx-auto"><a href="/shop" class="text-md" >Discover our collection</a></div>
+						</div>
+						
+					</div>
+					
+					<div class="mx-auto grid grid-cols-5 border-2 rounded-xl text-gray-500 border-gray-500 my-5 " th:each="cart:${cartItem}">
+						<div class="col-span-2 p-2 h-50">
+							<img alt="Image not found"  th:src="@{'/ProductImages/'+${cart.product.productImages.get(0)}}" class="h-full mx-auto">
+						</div>
+						<div class="col-span-3 p-5 text-xl text-black">
+							<h4 th:text="${cart.product.productName}"></h4>
+							<h4 th:text="'Brand-'+${cart.product.brandName}"></h4>
+							<h4 th:text="'Color-'+${cart.color}"></h4>
+							<h4 th:text="'Size-'+${cart.size}"></h4>
+							<p class="flex gap-4"><span th:text="'₹'+${cart.product.sellingPrice}" class="line-through"></span> <span th:text="'₹'+${cart.product.finalPrice}"></span><span class="bg-black text-white text-md px-2" th:text="${cart.product.discount}+'%'"></span> </p>
+							<div class="flex items-center  gap-3 p-5">
+
+		    					<form th:action="@{'/cart/decrease/'+${cart.id}}" method="post">
+						        <button class="border border-gray-400 rounded px-3 py-1 cursor-pointer">
+						            -
+						        </button>
+		   							 </form>
+		
+							    <span th:text="${cart.quantity}"></span>
+							
+							    <form th:action="@{'/cart/increase/'+${cart.id}}" method="post">
+							        <button class="border border-gray-400 rounded px-3 py-1 cursor-pointer">
+							            +
+							        </button>
+							    </form>
+							    <a th:href="@{'/cart/remove/'+${cart.id}}"
+
+                           class="btn btn-outline-danger btn-sm mt-3">
+
+                            <i class="bi bi-trash"></i>
+
+                            Remove
+
+                       		 </a>
+
+							</div>
+							</div>
+							</div>
+						</div>
+						<div class="col-mspan-4 md:col-span-1 my-10 border-2 border-gray-500 rounded-md">
+							<!-- Right Side -->
+							
+							    <div class=" p-5 bg-[#f7f7f7]">
+							
+							        <h3 class="text-2xl font-bold mb-5">
+							            Order Summary
+							        </h3>
+							
+							        <div class="flex justify-between py-2">
+							            <span>Items</span>
+							        </div>
+							
+							        <div class="flex justify-between py-2">
+							            <span>Subtotal</span>
+							            <span>₹<span th:text="${subtotal}"></span></span>
+							        </div>
+							
+							        <div class="flex justify-between py-2">
+							            <span>Shipping</span>
+							            <span>₹<span th:text="${shipping}"></span></span>
+							        </div>
+							
+							        <div class="flex justify-between py-2">
+							            <span>Discount</span>
+							            <span>-₹<span th:text="${discount}"></span></span>
+							        </div>
+							
+							        <hr class="my-3">
+							
+							        <div class="flex justify-between text-lg font-bold">
+							            <span>Total</span>
+							            <span>₹<span th:text="${grandTotal}"></span></span>
+							        </div>
+							
+							        <div class="mt-5">
+							        	<a href="/checkout"
+							            
+							            class="w-full bg-black text-white rounded-lg py-3 px-2  cursor-pointer">
+							            Proceed to Payment
+							        </a>
+							        </div>
+							
+							    </div>
+							
+							</div>
+						</div>
+						
+		</main>
+	</body>
+</html>

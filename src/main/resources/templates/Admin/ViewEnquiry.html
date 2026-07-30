@@ -1,0 +1,47 @@
+<html th:replace="~{Admin/base::layout(~{::main})}">
+	<body>
+		<main class="font-[times]">
+			<div class="">
+				<div class=" mx-auto my-5 border border-gray-500  overflow-hidden">
+					<div class="shadow-md">
+						<div class="card-header bg-primary">
+							<h4 class="bg-blue-400 text-white text-center text-xl md:text-2xl p-3">Manage Enquiries</h4>
+						</div>
+						<div class="">
+							<div >
+								<div class="overflow-x-auto ">
+									<table class=" min-w-max text-center ">
+									<tr>
+										<th class="border border-gray-500 px-2 p-1 " >Sr. No.</th>
+										<th class="border border-gray-500 px-2 p-1 " >Name</th>
+										<th class="border border-gray-500 px-2 p-1 " >Contact No.</th>
+										<th class="border border-gray-500 px-2 p-1 ">Email</th>
+										<th class="border border-gray-500 px-2 p-1 ">Address</th>
+										<th class="border border-gray-500 px-2 p-1 ">Enquiry Type</th>
+										<th class="border border-gray-500 px-2 p-1 ">Message</th>
+										<th class="border border-gray-500 px-2 p-1 ">Time</th>
+										<th class="border border-gray-500 px-2 p-1 ">Action</th>
+									</tr>
+									<tr th:each="enquiry,srno:${enquiries}">
+										<td th:text="${srno.count}" class="border border-gray-500 p-2  "></td>
+										<td th:text="${enquiry.name}" class="border border-gray-500 p-2  "></td>
+										<td th:text="${enquiry.contactNo}" class="border border-gray-500 p-2 "></td>
+										<td th:text="${enquiry.email}" class="border border-gray-500 p-2 "></td>
+										<td th:text="${enquiry.address}" class="border border-gray-500 p-2 "></td>
+										<td th:text="${enquiry.enquiryType}" class="border border-gray-500 p-2 "></td>
+										<td th:text="${enquiry.message}" class="border border-gray-500 p-2 "></td>
+										<td th:text="${#temporals.format(enquiry.enquiryAt,'dd-MM-yyyy, HH:mm a')}" class="border border-gray-500 p-2 "></td>
+										<td class="border-b p-2">
+											<a class="border border-gray-500 bg-red-500 p-1 px-2 rounded-2xl text-white mx-2" th:href="@{'/Admin/deleteEnquiry/' + ${enquiry.id}}">Delete</a>
+										</td>
+									</tr>
+									</table>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,125 @@
+<html th:replace="~{Admin/base::layout(~{::main})}">
+	<body>
+		<main >
+			<div class="bg-gray-200 w-full">
+				<div class="mx-auto my-5 border border-gray-500 w-4/5">
+					<div class="shadow-md">
+						<div class="bg-blue-400 text-white text-center text-xl md:text-2xl p-3">Manage Orders</div>
+						<div class="">
+							<div class="overflow-x-auto">
+								<table class=" text-center mx-auto my-5 outerflow">
+									<tr>
+										<th class="border border-gray-500 px-2 p-1 ">Sr. No.</th>
+										<th class="border border-gray-500 px-2 p-1 ">Order Id</th>
+										<th class="border border-gray-500 px-2 p-1 ">Product</th>
+										<th class="border border-gray-500 px-2 p-1 ">Product Name</th>
+										<th class="border border-gray-500 px-2 p-1 ">Customer</th>
+										<th class="border border-gray-500 px-2 p-1 ">Quantity</th>
+										<th class="border border-gray-500 px-2 p-1 ">Amount</th>
+										<th class="border border-gray-500 px-2 p-1 ">Payment</th>
+										<th class="border border-gray-500 px-2 p-1 ">Status</th>
+										<th class="border border-gray-500 px-2 p-1 ">Order On</th>
+										<th class="border border-gray-500 px-2 p-1">Action</th>
+									</tr>
+									<tr th:each="order,stat:${orders}" class="hover:bg-gray-50">
+
+									    <td class="border border-gray-500 px-2 p-1 " th:text="${stat.count}"></td>
+									
+									    <td class="border border-gray-500 px-2 p-1 " th:text="${order.orderId}"></td>
+									
+									    <td class="border border-gray-500 px-2 p-1 ">
+									        <img th:src="@{'/ProductImages/'+${order.product.productImages[0]}}"
+									             class="w-16 h-16 object-cover rounded">
+									    </td>
+									
+									    <td class="border border-gray-500 px-2 p-1 " th:text="${order.productName}"></td>
+									
+									    <td class="border border-gray-500 px-2 p-1 " th:text="${order.customerName}"></td>
+									
+									    <td class="border border-gray-500 px-2 p-1 " th:text="${order.quantity}"></td>
+									
+									    <td class="border border-gray-500 px-2 p-1 " th:text="'₹'+${order.totalAmount}"></td>
+									
+									    <td class="border border-gray-500 px-2 p-1 ">
+									        <span class="px-2 py-1 rounded text-white"
+									              th:classappend="${order.paymentStatus.name()=='Success'}
+									              ? ' bg-green-500'
+									              : (${order.paymentStatus.name()=='Pending'}
+									                    ? ' bg-yellow-500'
+									                    : ' bg-red-500')"
+									              th:text="${order.paymentStatus}">
+									        </span>
+									    </td>
+									
+									    <td class="border border-gray-500 px-2 p-1 ">
+									        <span class="px-2 py-1 rounded text-white"
+									              th:classappend="${order.orderStatus.name()=='Delivered'}
+									              ? ' bg-green-500'
+									              : (${order.orderStatus.name()=='Cancelled'}
+									                    ? ' bg-red-500'
+									                    : ' bg-blue-500')"
+									              th:text="${order.orderStatus}">
+									        </span>
+									    </td>
+									
+									    <td class="border border-gray-500 px-2 p-1 " th:text="${#temporals.format(order.orderAt,'dd MMM yyyy')}"></td>
+									    <td class="border border-gray-500 px-2 p-1">
+
+    <form th:action="@{/Admin/update-order-status}" method="post">
+
+        <input type="hidden" name="id" th:value="${order.id}">
+
+        <select name="status"
+                class="border rounded px-2 py-1 text-sm">
+
+            <option th:selected="${order.orderStatus.name()=='Processing'}"
+                    value="Processing">
+                Processing
+            </option>
+
+            <option th:selected="${order.orderStatus.name()=='Confirmed'}"
+                    value="Confirmed">
+                Confirmed
+            </option>
+
+            <option th:selected="${order.orderStatus.name()=='Shipped'}"
+                    value="Shipped">
+                Shipped
+            </option>
+
+            <option th:selected="${order.orderStatus.name()=='Out_For_Delivery'}"
+                    value="Out_For_Delivery">
+                Out For Delivery
+            </option>
+
+            <option th:selected="${order.orderStatus.name()=='Delivered'}"
+                    value="Delivered">
+                Delivered
+            </option>
+
+            <option th:selected="${order.orderStatus.name()=='Cancelled'}"
+                    value="Cancelled">
+                Cancelled
+            </option>
+
+        </select>
+
+        <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded mt-2 w-full">
+            Update
+        </button>
+
+    </form>
+
+</td>
+									
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</main>
+	</body>
+</html>

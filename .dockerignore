@@ -1,0 +1,17 @@
+target/
+.git/
+.github/
+.idea/
+.vscode/
+
+node_modules/
+
+*.iml
+*.log
+
+src/test/
+
+README.md
+
+Public/
+uploads/

@@ -1,0 +1,84 @@
+<html>
+<head>
+	<title>Viasta | User Portal</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/output.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+</head>
+	<body>
+		<main>
+			<div class="grid grid-cols-2 md:grid-cols-4">
+				<div class="hidden md:col-span-2 md:block py-5 px-5 md:px-30 text-center bg-black text-gray-500">
+						<div class="mt-50 "><a href="/" class="border border-gray-500 px-6 py-2  rounded-xl text-md"><i class="fa-solid fa-arrow-left mx-2 text-gray-500"></i>Back to Store</a></div>
+						<div class=" text-7xl mt-10 text-white">Viasta</div>
+						<div class="text-xl mt-3 text-uppercase">CLOTHING STORE</div>
+						<div class="text-3xl mt-10">"Fashion is not just clothing — it is the language of your soul."</div>
+						<ul class="list-disc text-lg text-left mt-10">
+							<li class="mt-2">Exclusive member-only offers</li>
+							<li class="mt-2">Track orders in real time</li>
+							<li class="mt-2">Save your wishlist across devices</li>
+							<li class="mt-2">Early access to new collections</li>
+						</ul>
+				</div>
+				<div class="col-span-2 md:col-span-2  py-20 px-5 sm:px-10 md:px-30 text-gray-500">
+					<div class="">
+						<div class="grid grid-cols-2">
+							<div class=" border-b-2 col-span-1 text-center text-2xl border-[#9f9f9f] text-[#9f9f9f]"><a href="/login">Sign In</a></div>
+							<div class="border-b-2 col-span-1 text-center text-2xl text-black"><a href="/Register">Register</a></div>
+						</div>
+						<div class="mt-10 font-bold text-4xl text-black">Join the Circle</div>
+						<div class="text-lg">Create your account to start your SMI journey.</div>
+						<form action="/Register" method="post" class="mt-10" th:object="${dto}" onsubmit="return validatePassword()">
+					
+							<label for="name" class="text-xl my-4">Full name</label>
+							<input th:field="${dto.name}" type="text" class="border rounded-md py-2 px-3 my-4  w-full" placeholder="Enter Your Full Name" required>
+						
+							<label for="email" class="text-xl my-4">Email Address</label>
+							<input th:field="${dto.email}" type="email" class="border rounded-md py-2 px-3 my-4  w-full" placeholder="you@example.com" required>
+						
+							<label for="contact" class="text-xl my-4">Mobile Number</label>
+							<input th:field="${dto.contactNo}" type="tel" maxlength="10" class="border rounded-md py-2 px-3 my-4  w-full" placeholder="+91 XXXXX XXXXX" required>
+						
+							<label for="gender" class="text-xl my-4">Gender</label>
+							<div class=" text-xl" > 
+								<input th:field="${dto.gender}" type="radio" name="gender" value="Male" class="border  rounded-2 py-2 px-3 m-3" required>Male
+								<input th:field="${dto.gender}" type="radio" name="gender" value="Female" class="border  rounded-2 py-2 px-3 m-3" required>Female
+								<input th:field="${dto.gender}" type="radio" name="gender" value="Others" class="border  rounded-2 py-2 px-3 m-3" required>Others
+							</div>
+							
+							<label for="Password" class="text-xl my-4">Password</label>
+							<input th:field="${dto.password}" id="password"   type="password" class="border rounded-md py-2 px-3 my-4 w-full" placeholder="Create a Strong Password" required>
+						
+							<label for="Password" class="text-xl my-4">Confirm Password</label>
+							<input type="password" id="confirmpassword" class="border rounded-md py-2 px-3 my-4  w-full" placeholder="Confirm your password" required>
+							
+							<div class="text-xl my-4"><input type="checkbox"> I agree to the <a class="text-black underline">Terms</a> and <a class="text-black underline">Privacy Policy</a></div>
+							
+							<button type="submit" class="w-full my-5 bg-black py-3 text-xl font-bold text-white">CREATE MY ACCOUNT</button>
+							
+							<div class="text-lg">Already have an account? <a class="text-black underline" href="/login">Sign in here</a></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script type="text/javascript">
+			var msg="[[${msg}]]";
+			if(msg!=""){
+				alert(msg);
+			}
+			
+			function validatePassword(){
+				var p = document.getElementById("password");
+				var cp = document.getElementById("confirmpassword");
+				if (p.value == cp.value) {
+					return true;
+				} else {
+				  alert("password and Confirm Password does not match");
+				  return false;
+				}
+			}
+		</script>
+	</body>
+</html>

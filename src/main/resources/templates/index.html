@@ -1,0 +1,500 @@
+<html th:replace="~{base::layout(~{::main})}">
+
+	<body>
+		<main class="font-[Times] gold">
+			<section id="Hero" class="w-full px-2 md:px-10 my-20 py-5 bg-[#fefefe]">
+				<div class="grid grid-cols-6 md:grid-cols-12 gap-4">
+					<div class="col-span-6 ">
+						<div class="mt-50 md:mt-25 p-5 border-b border-[#9f9f9f]">
+							<div class="text-[#9f9f9f] text-sm my-5 gold">EXPLORE COLLECTION</div>
+							<div class="font-bold text-6xl my-5">Wear Your Story With Pride</div>
+							<div class="text-[#9f9f9f] text-xl my-5 pr-10">Curated fashion that bridges the timeless craft of Indian tradition with the clean lines of contemporary style.</div>
+							<div class="my-5">
+								<a href="/shop" class="text-white text-center font-bold text-sm p-3 px-4 bg-black rounded-md mr-2 md:mr-5 hover:shadow-xl hover:shadow-[#9f9f9f] hover:-translate-0.5">EXPLORE COLLECTION</a>
+								<a href="/about" class="text-center font-bold text-sm p-3 px-4 text-black rounded-md border border-[#9f9f9f] hover:bg-black hover:text-white">OUR STORY</a>
+							</div>
+						</div>
+						<div class="font-bold text-black flex justify-around text-2xl mt-5">
+							<div >
+								<div>500 <sup class="text-3xl">+</sup> </div>
+								<div class="text-sm text-[#9f9f9f]">PRODUCTS</div>
+							</div>
+							<div>
+								<div>12K <sup class="text-3xl">+</sup> </div>
+								<div class="text-sm text-[#9f9f9f]">HAPPY CUSYOMERS</div>
+							</div>
+							<div>
+								<div>4.9 <sup ><i class="fa-solid fa-star"></i></sup> </div>
+								<div class="text-sm text-[#9f9f9f]">AVERAGE RATING</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-span-6 hidden md:block border border-[#9f9f9f] mx-15 h-full">
+						<div class="bg-[#e6e2dc]  -translate-6 p-5 h-full">
+							<img alt="Image not found" src="images/slider_hero-1.png" class="rounded-xl h-full w-full z-10">
+							<div class="text-center text-md text-[#d5cec3]">VIASTA COLLECTION</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="my-10 md:my-20" id="why">
+				<div class="bg-black gold">
+					<ul class="grid grid-cols-4 text-white gold py-5 gap-2 text-left">
+						<li class="col-span-4 md:col-span-1 text-center"><i class="fa-solid fa-arrow-right mx-2"></i>FREE SHIPPING OVER <i class="fa-solid fa-indian-rupee-sign"></i>5,000</li>
+						<li class="col-span-2 md:col-span-1 text-center"><i class="fa-solid fa-arrow-rotate-right mx-2"></i>EASY 30-DAY RETURN</li>
+						<li class="col-span-2 md:col-span-1 text-center"><i class="fa-solid fa-wallet mx-2"></i>SECURE PAYMENT</li>
+						<li class="col-span-4 md:col-span-1 text-center"><i class="fa-solid fa-phone mx-2"></i>24/7 CUSTOMER SUPPORT</li>
+					</ul>
+				</div>
+			</section>
+			<section id="Cateogory" class="hidden my-20">
+				<div>
+					<div class="text-center text-[#9f9f9f] text-md mt-5">BROWSE BY</div>
+					<div class="text-4xl font-bold text-center mt-5">Shop By Cateogory</div>
+					
+						<div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+					      <div class="group relative">
+					        <img src="images/1.jpg" alt=" Basic Tee in black." class="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80" />
+					        <div class="mt-4 flex justify-between">
+					          <div>
+					            <h3 class="text-sm text-gray-700">
+					              <a href="#">
+					                <span aria-hidden="true" class="absolute inset-0"></span>
+					                Basic Tee
+					              </a>
+					            </h3>
+					            <p class="mt-1 text-sm text-gray-500">Black</p>
+					          </div>
+					          <p class="text-sm font-medium text-gray-900">$35</p>
+					        </div>
+					      </div>
+					</div>
+				</div>
+			</section>
+			<section id="Featured" class="my-20 bg-[#f7f7f7] py-10">
+				<div>
+					<div class="text-center text-[#9f9f9f] text-md mt-5">HANDPICKED FOR YOU</div>
+					<div class="text-4xl font-bold text-center mt-5">The Featured Selection</div>
+					<div class="text-center text-[#9f9f9f] text-xl mt-5">Our most-loved pieces, curated by our stylists for the season. Each garment tells a story of craftsmanship and style.</div>
+					<div class="grid grid-cols-4 p-5 gap-4">
+						<div id=card class="col-span-2 relative md:col-span-1 border border-[#f9f9f9] shadow-lg hover:scale-102 py-3">
+								<img alt="Image not found" src="images/1.jpg" class="w-full h-5/7 md:h-3/4  my-2">
+								<div class="h-1/4">
+								<div class="text-[#9f9f9f] mx-5 mt-1">SHIRTS</div>
+								<div class="mx-5 font-bold mt-1 text-sm">Vintage Denim Jacket</div>
+								<div class="flex justify-around mx-5 md:mr-20 mt-1">
+									<div class="font-bold"><i class="fa-solid fa-indian-rupee-sign"></i>1</div>
+									<div class="text-[#9f9f9f] line-through"><i class="fa-solid fa-indian-rupee-sign"></i>7,499</div>
+									<div>-100%</div>
+								</div>	
+								<div class="mx-5 mt-1"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>  (0)</div>
+								</div>
+								<div class=" m-2 text-white absolute top-8 left-4  bg-black text-center p-1 w-1/4">-100%
+								</div>
+								<div class=" m-2  py-2 bg-white rounded-[50%] absolute top-8 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-regular fa-heart"></i>
+								</div>
+								<div class="  m-2 py-2 bg-white  rounded-[50%] absolute top-20 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-slab-press fa-regular fa-eye"></i>
+								</div>
+						</div>
+						<div id=card class="col-span-2 md:col-span-1 relative border border-[#f9f9f9] shadow-md hover:scale-105 py-3">
+								<img alt="Image not found" src="images/4.jpg" class="w-full h-5/7 md:h-3/4  my-2">
+								<div class="h-1/4">
+								<div class="text-[#9f9f9f] mx-5 mt-1">SHIRTS</div>
+								<div class="mx-5 font-bold mt-1 text-sm">Vintage Denim Jacket</div>
+								<div class="flex justify-around mx-5 md:mr-20 mt-1">
+									<div class="font-bold"><i class="fa-solid fa-indian-rupee-sign"></i>1</div>
+									<div class="text-[#9f9f9f] line-through"><i class="fa-solid fa-indian-rupee-sign"></i>7,499</div>
+									<div>-100%</div>
+								</div>	
+								<div class="mx-5 mt-1"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>  (0)</div>
+								</div>
+								<div class=" m-2 text-white absolute top-8 left-4 bg-black text-center p-1 w-1/4">-100%
+								</div>
+								<div class=" m-2  py-2 bg-white rounded-[50%] absolute top-8 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-regular fa-heart"></i>
+								</div>
+								<div class="  m-2 py-2 bg-white  rounded-[50%] absolute top-20 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-slab-press fa-regular fa-eye"></i>
+								</div>
+						</div>
+						<div id=card class="col-span-2 md:col-span-1 relative border border-[#f9f9f9] shadow-md hover:scale-105 py-3">
+								<img alt="Image not found" src="images/7.jpg" class="w-full h-5/7 md:h-3/4  my-2">
+								<div class="h-1/4">
+								<div class="text-[#9f9f9f] mx-5 mt-1">SHIRTS</div>
+								<div class="mx-5 font-bold mt-1 text-sm">Vintage Denim Jacket</div>
+								<div class="flex justify-around mx-5 md:mr-20 mt-1">
+									<div class="font-bold"><i class="fa-light fa-indian-rupee-sign"></i>1</div>
+									<div class="text-[#9f9f9f] line-through"><i class="fa-light fa-indian-rupee-sign"></i>7,499</div>
+									<div>-100%</div>
+								</div>	
+								<div class="mx-5 mt-1"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>  (0)</div>
+								</div>
+								<div class=" m-2 text-white absolute top-8 left-4 bg-black text-center p-1 w-1/4">-100%
+								</div>
+								<div class=" m-2  py-2 bg-white rounded-[50%] absolute top-8 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-regular fa-heart"></i>
+								</div>
+								<div class="  m-2 py-2 bg-white  rounded-[50%] absolute top-20 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-slab-press fa-regular fa-eye"></i>
+								</div>
+						</div>
+						<div id=card class="col-span-2 md:col-span-1 relative border border-[#f9f9f9] shadow-md hover:scale-105 py-3">
+								<img alt="Image not found" src="images/10.jpg" class="w-full h-5/7 md:h-3/4  my-2">
+								<div class="h-1/4">
+								<div class="text-[#9f9f9f] mx-5 mt-1">SHIRTS</div>
+								<div class="mx-5 font-bold mt-1 text-sm">Vintage Denim Jacket</div>
+								<div class="flex justify-around mx-5 md:mr-20 mt-1">
+									<div class="font-bold"><i class="fa-solid fa-indian-rupee-sign"></i>1</div>
+									<div class="text-[#9f9f9f] line-through"><i class="fa-solid fa-indian-rupee-sign"></i>7,499</div>
+									<div>-100%</div>
+								</div>	
+								<div class="mx-5 mt-1"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>  (0)</div>
+								</div>
+								<div class=" m-2 text-white absolute top-8 left-4 bg-black text-center p-1 w-1/4">-100%
+								</div>
+								<div class=" m-2  py-2 bg-white rounded-[50%] absolute top-8 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-regular fa-heart"></i>
+								</div>
+								<div class="  m-2 py-2 bg-white  rounded-[50%] absolute top-20 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-slab-press fa-regular fa-eye"></i>
+								</div>
+						</div>
+					</div>
+					<div class="w-full">
+						<div class="mx-auto w-2/3  md:w-1/5 text-center p-2 border border-gray-600"><a href="/shop" >EXPLORE ALL PRODUCTS <i class="fa-light fa-arrow-right"></i></a></div>
+					</div>
+				</div>
+			</section>
+			<section id="Philopsphy" class="my-20 mx-2 md:m-20">
+				<div class="grid grid-cols-6 md:grid-cols-12 gap-4">
+					<div class="col-span-6">
+						<img alt="Image not found" src="images/10.jpg">
+					</div>
+					<div class="col-span-6">
+						<div class="text-[#9f9f9f] text-sm">Our Philosophy</div>
+						<div class="text-3xl font-bold mt-2">Crafted With Intention</div>
+						<div class="mt-2 text-md text-[#9f9f9f]">At Viasta, every garment begins with a story. We source fabrics from master weavers, collaborate with artisans who have perfected their craft over generations, and design pieces that honor heritage while embracing modernity.</div>
+						<div class="mt-2 text-md text-[#9f9f9f]">Our commitment to quality means every stitch is intentional, every silhouette is considered, and every collection is designed to become part of your story.</div>
+						<div class="text-white text-center font-bold text-sm p-3 px-4 bg-black rounded-md w-1/2 mr-5 hover:shadow-xl mt-3 hover:shadow-[#9f9f9f] hover:-translate-0.5"><a href="/about" >Meet the brand</a></div>
+					</div>
+				</div>
+			</section>
+			<section id="Coupon" class="my-20 mx-2 md:m-10 bg-linear-65 from-[#18130b] to-[#b29b60]">
+				<div class="grid grid-cols-2 gap-4">
+					<div class="col-span-2 md:col-span-1">
+						<div class="p-2 text-white text-center mt-5 font-bold w-2/3 md:w-1/3 mx-auto border border-white rounded-2xl"><i class="fa-solid fa-dot"></i> Limited Time Offer</div>
+						<div class="text-4xl font-bold text-white text-center mt-3">Elevate Your Style</div>
+						<div class="text-3xl font-bold text-amber-400 text-center mt-3">20% Exclusive</div>
+						<div class="text-3xl font-bold text-gray-700 italic text-center mt-3">Discount</div>
+						<div class="text-md mx-2 md:mx-10 text-gray-400 mt-3 text-center">Experience handcrafted luxury. Use our welcome code at checkout to claim your offer on all premium collections.</div>
+						<div class="flex ml-10">
+							<div class="bg-[#28221a] border border-[#6a5736] p-3 m-5 rounded-xl">
+								<div class="text-white text-xl text-center">03</div>
+								<div class="text-[#9f9f9f]">HOURS</div>
+							</div>
+							<div class="text-[#18130c] my-8 text-3xl">:</div>
+							<div class="bg-[#28221a] border border-[#6a5736] p-3 m-5 rounded-xl">
+								<div class="text-white text-xl text-center" >32</div>
+								<div class="text-[#9f9f9f]">MINS</div>
+							</div>
+							<div class="text-[#18130c] my-8 text-3xl">:</div>
+							<div class="bg-[#28221a] border border-[#6a5736] p-3 m-5 rounded-xl">
+								<div class="text-white text-xl text-center">35</div>
+								<div class="text-[#9f9f9f]">SECS</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-span-2 md:col-span-1 mx-auto my-10">
+						<div class="border border-[#18130b] bg-[#463b25] p-10 rounded-xl">
+							<div class="text-5xl text-center"><i class="fa-vellum fa-solid fa-tag"></i></div>
+							<div class="text-[#b29b60] text-center text-sm font-bold">Your Coupon Code</div>
+							<div class="text-center p-3 border border-dotted border-[#b29b60] text-white text-2xl mt-2">LUMI20</div>
+							<div class="text-amber-500 mt-2 text-center"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i></div>
+							<div class="text-center text-sm mt-2 text-gray-200">Save ₹500 on orders over ₹2,500</div>
+							<button class="text-center p-2 mt-2 bg-[#b29b60] w-full">Copy code <i class="fa-sharp fa-regular fa-clone"></i></button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="Demand" class="my-20  py-10">
+				<div>
+					<div class="text-center text-[#9f9f9f] text-md mt-5">High Demand</div>
+					<div class="text-4xl font-bold text-center mt-5">Best Selling Products</div>
+					<div class="text-center text-[#9f9f9f] text-xl mt-5">Our most popular styles, loved by everyone.</div>
+					<div class="grid grid-cols-4 p-5 gap-4">
+						<div id=card class="col-span-2 md:col-span-1 relative border border-[#f9f9f9] shadow-md hover:scale-102 py-3">
+								<img alt="Image not found" src="images/2.jpg" class="w-full h-5/7 md:h-3/4  my-2">
+								<div class="h-1/4">
+								<div class="text-[#9f9f9f] mx-5 mt-1">SHIRTS</div>
+								<div class="mx-5 font-bold mt-1 text-sm">Vintage Denim Jacket</div>
+								<div class="flex justify-around mx-5 md:mr-20 mt-1">
+									<div class="font-bold"><i class="fa-solid fa-indian-rupee-sign"></i>1</div>
+									<div class="text-[#9f9f9f] line-through"><i class="fa-solid fa-indian-rupee-sign"></i>7,499</div>
+									<div>-100%</div>
+								</div>	
+								<div class="mx-5 mt-1"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>  (0)</div>
+								</div>
+								<div class=" m-2 text-white absolute top-8 left-4 bg-black text-center p-1 w-1/4">-100%
+								</div>
+								<div class=" m-2  py-2 bg-white rounded-[50%] absolute top-8 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-regular fa-heart"></i>
+								</div>
+								<div class="  m-2 py-2 bg-white  rounded-[50%] absolute top-20 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-slab-press fa-regular fa-eye"></i>
+								</div>
+						</div>
+						<div id=card class="col-span-2 md:col-span-1 border relative border-[#f9f9f9] shadow-md hover:scale-102 py-3">
+								<img alt="Image not found" src="images/4.jpg" class="w-full h-5/7 md:h-3/4  my-2">
+								<div class="h-1/4">
+								<div class="text-[#9f9f9f] mx-5 mt-1">SHIRTS</div>
+								<div class="mx-5 font-bold mt-1 text-sm">Vintage Denim Jacket</div>
+								<div class="flex justify-around mx-5 md:mr-20 mt-1">
+									<div class="font-bold"><i class="fa-solid fa-indian-rupee-sign"></i>1</div>
+									<div class="text-[#9f9f9f] line-through"><i class="fa-solid fa-indian-rupee-sign"></i>7,499</div>
+									<div>-100%</div>
+								</div>	
+								<div class="mx-5 mt-1"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>  (0)</div>
+								</div>
+								<div class=" m-2 text-white absolute top-8 left-4 bg-black text-center p-1 w-1/4">-100%
+								</div>
+								<div class=" m-2  py-2 bg-white rounded-[50%] absolute top-8 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-regular fa-heart"></i>
+								</div>
+								<div class="  m-2 py-2 bg-white  rounded-[50%] absolute top-20 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-slab-press fa-regular fa-eye"></i>
+								</div>
+						</div>
+						<div id=card class="col-span-2 md:col-span-1 relative border border-[#f9f9f9] shadow-md hover:scale-102 py-3">
+								<img alt="Image not found" src="images/6.jpg" class="w-full h-5/7 md:h-3/4  my-2">
+								<div class="h-1/4">
+								<div class="text-[#9f9f9f] mx-5 mt-1">SHIRTS</div>
+								<div class="mx-5 font-bold mt-1 text-sm">Vintage Denim Jacket</div>
+								<div class="flex justify-around mx-5 md:mr-20 mt-1">
+									<div class="font-bold"><i class="fa-solid fa-indian-rupee-sign"></i>1</div>
+									<div class="text-[#9f9f9f] line-through"><i class="fa-solid fa-indian-rupee-sign"></i>7,499</div>
+									<div>-100%</div>
+								</div>	
+								<div class="mx-5 mt-1"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>  (0)</div>
+								</div>
+								<div class=" m-2 text-white absolute top-8 left-4 bg-black text-center p-1 w-1/4">-100%
+								</div>
+								<div class=" m-2  py-2 bg-white rounded-[50%] absolute top-8 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-regular fa-heart"></i>
+								</div>
+								<div class="  m-2 py-2 bg-white  rounded-[50%] absolute top-20 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-slab-press fa-regular fa-eye"></i>
+								</div>
+						</div>
+						<div id=card class="col-span-2 md:col-span-1 border relative border-[#f9f9f9] shadow-md hover:scale-102 py-3">
+								<img alt="Image not found" src="images/8.jpg" class="w-full h-5/7 md:h-3/4  my-2">
+								<div class="h-1/4">
+								<div class="text-[#9f9f9f] mx-5 mt-1">SHIRTS</div>
+								<div class="mx-5 font-bold mt-1 text-sm">Vintage Denim Jacket</div>
+								<div class="flex justify-around mx-5 md:mr-20 mt-1">
+									<div class="font-bold"><i class="fa-solid fa-indian-rupee-sign"></i>1</div>
+									<div class="text-[#9f9f9f] line-through"><i class="fa-solid fa-indian-rupee-sign"></i>7,499</div>
+									<div>-100%</div>
+								</div>	
+								<div class="mx-5 mt-1"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>  (0)</div>
+								</div>
+								<div class=" m-2 text-white absolute top-8 left-4 bg-black text-center p-1 w-1/4">-100%
+								</div>
+								<div class=" m-2  py-2 bg-white rounded-[50%] absolute top-8 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-regular fa-heart"></i>
+								</div>
+								<div class="  m-2 py-2 bg-white  rounded-[50%] absolute top-20 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-slab-press fa-regular fa-eye"></i>
+								</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="Arrivals" class="my-20 bg-[#f7f7f7] py-10">
+				<div>
+					<div class="text-center text-[#9f9f9f] text-md mt-5">Fresh Arrivals</div>
+					<div class="text-4xl font-bold text-center mt-5">New Arrivals</div>
+					<div class="text-center text-[#9f9f9f] text-xl mt-5">Discover the newest additions to our collection. Crafted with exceptional style and timeless quality.</div>
+					<div class="grid grid-cols-4 p-5 gap-4">
+						<div id=card class="col-span-2 md:col-span-1 border relative border-[#f9f9f9] shadow-md hover:scale-102 py-3 ">
+								<img alt="Image not found" src="images/3.jpg" class="w-full h-5/7 md:h-3/4   my-2">
+								<div class="h-1/4">
+								<div class="text-[#9f9f9f] mx-5 mt-1">SHIRTS</div>
+								<div class="mx-5 font-bold mt-1 text-sm">Vintage Shirts</div>
+								<div class="flex justify-around mx-5 md:mr-20 mt-1">
+									<div class="font-bold"><i class="fa-solid fa-indian-rupee-sign"></i>1</div>
+									<div class="text-[#9f9f9f] line-through"><i class="fa-solid fa-indian-rupee-sign"></i>7,499</div>
+									<div>-100%</div>
+								</div>	
+								<div class="mx-5 mt-1"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>  (0)</div>
+								</div>
+								<div class=" m-2 text-white absolute top-8 left-4 bg-black text-center p-1 w-1/4">-100%
+								</div>
+								<div class=" m-2  py-2 bg-white rounded-[50%] absolute top-8 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-regular fa-heart"></i>
+								</div>
+								<div class="  m-2 py-2 bg-white  rounded-[50%] absolute top-20 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-slab-press fa-regular fa-eye"></i>
+								</div>
+						</div>
+						<div id=card class="col-span-2 md:col-span-1 border border-[#f9f9f9] shadow-md hover:scale-102 relative py-3 ">
+								<img alt="Image not found" src="images/6.jpg" class="w-full h-5/7 md:h-3/4   my-2">
+								<div class="h-1/4">
+								<div class="text-[#9f9f9f] mx-5 mt-1">JEANS</div>
+								<div class="mx-5 font-bold mt-1 text-sm">Vintage Denim Jeans</div>
+								<div class="flex justify-around mx-5 md:mr-20 mt-1">
+									<div class="font-bold"><i class="fa-solid fa-indian-rupee-sign"></i>1</div>
+									<div class="text-[#9f9f9f] line-through"><i class="fa-solid fa-indian-rupee-sign"></i>7,499</div>
+									<div>-100%</div>
+								</div>	
+								<div class="mx-5 mt-1"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>  (0)</div>
+								</div>
+								<div class=" m-2 text-white absolute top-8 left-4 bg-black text-center p-1 w-1/4">-100%
+								</div>
+								<div class=" m-2  py-2 bg-white rounded-[50%] absolute top-8 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-regular fa-heart"></i>
+								</div>
+								<div class="  m-2 py-2 bg-white  rounded-[50%] absolute top-20 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-slab-press fa-regular fa-eye"></i>
+								</div>
+						</div>
+						<div id=card class="col-span-2 md:col-span-1 border border-[#f9f9f9] shadow-md hover:scale-102 relative py-3 ">
+								<img alt="Image not found" src="images/9.jpg" class="w-full h-5/7 md:h-3/4   my-2">
+								<div class="h-1/4">
+								<div class="text-[#9f9f9f] mx-5 mt-1">SHOES</div>
+								<div class="mx-5 font-bold mt-1 text-sm">Best Shoes</div>
+								<div class="flex justify-around mx-5 md:mr-20 mt-1">
+									<div class="font-bold"><i class="fa-solid fa-indian-rupee-sign"></i>1</div>
+									<div class="text-[#9f9f9f] line-through"><i class="fa-solid fa-indian-rupee-sign"></i>7,499</div>
+									<div>-100%</div>
+								</div>	
+								<div class="mx-5 mt-1"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>  (0)</div>
+								</div>
+								<div class=" m-2 text-white absolute top-8 left-4 bg-black text-center p-1 w-1/4">-100%
+								</div>
+								<div class=" m-2  py-2 bg-white rounded-[50%] absolute top-8 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-regular fa-heart"></i>
+								</div>
+								<div class="  m-2 py-2 bg-white  rounded-[50%] absolute top-20 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-slab-press fa-regular fa-eye"></i>
+								</div>
+						</div>
+						<div id=card class="col-span-2 md:col-span-1 border border-[#f9f9f9] shadow-md hover:scale-102 relative py-3 ">
+								<img alt="Image not found" src="images/12.jpg" class="w-full h-5/7 md:h-3/4   my-2">
+								<div class="h-1/4">
+								<div class="text-[#9f9f9f] mx-5 mt-1">Jackets</div>
+								<div class="mx-5 font-bold mt-1 text-sm">Vintage Denim Jacket</div>
+								<div class="flex justify-around mx-5 md:mr-20 mt-1">
+									<div class="font-bold"><i class="fa-solid fa-indian-rupee-sign"></i>1</div>
+									<div class="text-[#9f9f9f] line-through"><i class="fa-solid fa-indian-rupee-sign"></i>7,499</div>
+									<div>-100%</div>
+								</div>	
+								<div class="mx-5 mt-1"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>  (0)</div>
+								</div>
+								<div class=" m-2 text-white absolute top-8 left-4 bg-black text-center p-1 w-1/4">-100%
+								</div>
+								<div class=" m-2  py-2 bg-white rounded-[50%] absolute top-8 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-regular fa-heart"></i>
+								</div>
+								<div class="  m-2 py-2 bg-white  rounded-[50%] absolute top-20 right-4 border text-center w-1/6 hover:text-white hover:bg-black"><i class="fa-slab-press fa-regular fa-eye"></i>
+								</div>
+						</div>
+					</div>
+					</div>
+
+			</section>			
+			<section id="Feedback" class="my-20 bg-[#f7f7f7] py-10">
+				<div>
+					<div class="text-center text-[#9f9f9f] text-md mt-5">Social Proof</div>
+					<div class="text-4xl font-bold text-center mt-5">What Our Customers Say</div>
+					<div class="text-center text-[#9f9f9f] text-xl mt-5">Real words from real customers who trust and love our collections.</div>
+					<div class="grid grid-cols-6 gap-4 mt-5 p-5">
+						<div id=card1 class="col-span-6 md:col-span-2 border border-[#f9f9f9] shadow shadow-gray-600 hover:scale-105 p-3 py-10 ">
+								<div class="text-xl text-amber-500"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i></div>
+								<div class="text-xl mt-5">"Finally a brand that understands contemporary Indian fashion. The linen kurta set is my go-to for everything -office to outings."</div>
+								<div class="mt-5 grid grid-cols-3">
+									<div class="col-span-1 ">
+										<img alt="Image not found" src="images/5.jpg" class="w-1/2 border rounded-[50%]">
+									</div>
+									<div class="col-span-2">
+										<div>Pushkar Singh</div>
+										<div>Verified Buyer</div>
+									</div>
+								</div>
+						</div>
+						<div id=card2 class="col-span-6 md:col-span-2 border border-[#f9f9f9] shadow shadow-gray-600 hover:scale-105 p-3 py-10 ">
+								<div class="text-xl text-amber-500"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i></div>
+								<div class="text-xl mt-5 italic">"The linen shirt is absolutely stunning. The quality is beyond what I expected at this price point. I've already ordered three more."</div>
+								<div class="mt-5 grid grid-cols-3">
+									<div class="col-span-1 ">
+										<img alt="Image not found" src="images/6.jpg" class="w-1/2 border rounded-[50%]">
+									</div>
+									<div class="col-span-2">
+										<div>John doe</div>
+										<div>Verified Buyer</div>
+									</div>
+								</div>
+						</div>
+						<div id=card3 class="col-span-6 md:col-span-2 border border-[#f9f9f9] shadow shadow-gray-600 hover:scale-105 p-3 py-10 ">
+								<div class="text-xl text-amber-500"><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i></div>
+								<div class="text-xl mt-5 italic">"Wore the Embroidered Sherwani to my cousin's wedding. The compliments haven't stopped. SMI has a customer for life."</div>
+								<div class="mt-5 grid grid-cols-3">
+									<div class="col-span-1 ">
+										<img alt="Image not found" src="images/7.jpg" class="w-1/2 border rounded-[50%]">
+									</div>
+									<div class="col-span-2">
+										<div>Anjesh</div>
+										<div>Verified Buyer</div>
+									</div>
+								</div>
+						</div>
+					</div>
+				
+				</div>
+			</section>			
+			<section id="Blog" class="my-20 bg-[#f7f7f7] py-10">
+				<div>
+					<div class="text-center text-[#9f9f9f] text-md mt-5">Fashion Insights</div>
+					<div class="text-4xl font-bold text-center mt-5">From Our Blog</div>
+					<div class="text-center text-[#9f9f9f] text-xl mt-5">Style tips, trend reports, and the stories behind our collections.</div>
+					<div class="grid grid-cols-6 gap-4">
+					  <div
+					    id="card"
+					    class="col-span-6 md:col-span-2 border border-[#f9f9f9] shadow-xl hover:scale-102 py-3"
+					  >
+					    <img alt="Image not found" src="images/f1.png" class="w-full h-3/4 my-2" />
+					    <div class="h-1/4 px-5">
+					      <div class="text-[#9f9f9f] mt-1">SHIRTS</div>
+					      <div class="font-bold mt-1 text-sm pb-5 border-b border-[#9f9f9f]">
+					        What is Clothing brand?
+					      </div>
+					      <div class="flex justify-around mt-1">
+					        <div class="float-left text-[#9f9f9f] text-md mt-5">Mar 03,2025</div>
+					        <a class="float-right text-md mt-5" href="#"
+					          >Read <i class="fa-solid fa-arrow-right mx-2"></i
+					        ></a>
+					      </div>
+					    </div>
+					  </div>
+					  <div
+					    id="card"
+					    class="col-span-6 md:col-span-2 border border-[#f9f9f9] shadow-xl hover:scale-102 py-3"
+					  >
+					    <img alt="Image not found" src="images/f2.png" class="w-full h-3/4 my-2" />
+					    <div class="h-1/4 px-5">
+					      <div class="text-[#9f9f9f] mt-1">SHIRTS</div>
+					      <div class="font-bold mt-1 text-sm pb-5 border-b border-[#9f9f9f]">
+					        What is Clothing brand?
+					      </div>
+					      <div class="flex justify-around mt-1">
+					        <div class="float-left text-[#9f9f9f] text-md mt-5">Mar 03,2025</div>
+					        <a class="float-right text-md mt-5" href="#"
+					          >Read <i class="fa-solid fa-arrow-right mx-2"></i
+					        ></a>
+					      </div>
+					    </div>
+					  </div>
+					
+					  <div
+					    id="card"
+					    class="col-span-6 md:col-span-2 border border-[#f9f9f9] shadow-xl hover:scale-102 py-3"
+					  >
+					    <img alt="Image not found" src="images/f3.png" class="w-full h-3/4 my-2" />
+					    <div class="h-1/4 px-5">
+					      <div class="text-[#9f9f9f] mt-1">SHIRTS</div>
+					      <div class="font-bold mt-1 text-sm pb-5 border-b border-[#9f9f9f]">
+					        What is Clothing brand?
+					      </div>
+					      <div class="flex justify-around mt-1">
+					        <div class="float-left text-[#9f9f9f] text-md mt-5">Mar 03,2025</div>
+					        <a class="float-right text-md mt-5" href="#"
+					          >Read <i class="fa-solid fa-arrow-right mx-2"></i
+					        ></a>
+					      </div>
+					    </div>
+					    
+					  </div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
